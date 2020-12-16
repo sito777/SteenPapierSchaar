@@ -16,7 +16,21 @@ Al het bovenstaande
 Er kan met 3 spelers tegelijk gespeeld worden
 Goede code comments
 """
+from array import *
+import random
+
+SPS = [[1,2,3],["score"]]
 
 introductie = "\nWelkom bij Steen Papier schaar\nOm dit spel te spelen moet je antwoorden met nummers.\n\n1. Speel tegen de PC \n2. Speel een 2 player game\n3. Speel een 3 player game\n"
 print (introductie)
  
+optie = 3
+
+if optie == 2:
+    def 
+elif 1:
+    def
+elif 3:
+    def
+else:
+    print("De door u gekozen optie is geen optie. U kunt kiezen uit de nummers 1, 2 of 3. Probeer het opnieuw")

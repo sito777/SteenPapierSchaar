@@ -1,6 +1,7 @@
 """ De opdracht
-Je gaat steen papier schaar namaken. De regels hiervan zijn bekent maar voor de applicatie moet er een winnaar komen uit een best of 3! (de eerste met 2 punten uit 3 wint). 
-Evenals moet de data worden opgeslagen van degene die heeft gewonnen, met welk voorwerp en hoeveel punten op dat moment.
+Je gaat steen papier schaar namaken. De regels hiervan zijn bekent maar voor de applicatie moet er 
+een winnaar komen uit een best of 3! (de eerste met 2 punten uit 3 wint). Evenals moet de data worden 
+opgeslagen van degene die heeft gewonnen, met welk voorwerp en hoeveel punten op dat moment.
 
 Eisen V:
 De applicatie blijft aanstaan tot er iemand heeft gewonnen met 2 punten
@@ -19,18 +20,14 @@ Goede code comments
 from array import *
 import random
 
-SPS = [[1,2,3],["score"]]
+# een welkom menu met opties zoals 1p, 2p, 3p of stoppen(exit)
+# 1d array [rondex, rondex, rondex, rondex]
+# 2d array [[playernaam, playernaam, playernaam],[punter p1, punten p2, punten p3]]
+# een functie die weegt wie wint. Steen papier of schaar.
+# een functie die random steen, papier of schaar genereerd als de gebruiker tegen de pc speelt
+# een loop zodat het spel nooit zich zelf afsluit tenzij de gebruiker daar voor kiest
+# een loop zodat het spel aanblijft tot iemand heeft gewonnen
+# een loop voor de 1p spel
+# een loop voor de 2p spel
+# een loop voor de 3p spel
 
-introductie = "\nWelkom bij Steen Papier schaar\nOm dit spel te spelen moet je antwoorden met nummers.\n\n1. Speel tegen de PC \n2. Speel een 2 player game\n3. Speel een 3 player game\n"
-print (introductie)
- 
-optie = 3
-
-if optie == 2:
-    def 
-elif 1:
-    def
-elif 3:
-    def
-else:
-    print("De door u gekozen optie is geen optie. U kunt kiezen uit de nummers 1, 2 of 3. Probeer het opnieuw")

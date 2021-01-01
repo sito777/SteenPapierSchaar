@@ -20,7 +20,15 @@ Goede code comments
 from array import *
 import random
 
+namePlayArr = [[],[]]
+
 # een welkom menu met opties zoals 1p, 2p, 3p of stoppen(exit)
+print("Welkom bij steen papier schaar! Wat is je naam?/n")
+name1 = input("mijn naam is: ")
+namePlayArr.append([0],[])
+
+print (namePlayArr)
+
 # 1d array [rondex, rondex, rondex, rondex]
 # 2d array [[playernaam, playernaam, playernaam],[punter p1, punten p2, punten p3]]
 # een functie die weegt wie wint. Steen papier of schaar.

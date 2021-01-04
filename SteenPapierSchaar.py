@@ -29,20 +29,21 @@ name1 = input("mijn naam is: ")
 
 print ("\nWelkom {} bij steen papier schaar! Maak een keuze door middel van een cijfer te antwoorden.\n ".format(name1))
 namePlayArr[0] = name1 #de naam wordt geplaats in de array
-print("Maak een keuze.\n1. Player vs pc\n2. Player vs player\n3. 3 Player game\n4. Exit")
-keuze = input
 
 # een loop zodat het spel nooit zich zelf afsluit tenzij de gebruiker daar voor kiest
-while True:
+keuzeMenu = True
+while keuzeMenu:
+    keuze = input("Maak een keuze {}.\n1. Player vs pc\n2. Player vs player\n3. 3 Player game\n4. Exit\n".format(name1))
+
     if keuze == 1:
-        print("1")
-    elif keuze == 2:
+        print("a")
+    if keuze == 2:
         print("2")
-    elif keuze == 3:
+    if keuze == 3:
         print("3")
-    elif keuze == 4:
+    if keuze == 4:
         print("tot de volgende keer {}!")
-        break
+        False
     else:
         print("De door jou genomen keuzen wordt niet herkernt {}. Maak keuze uit 1, 2, 3 of 4".format(name1))
 

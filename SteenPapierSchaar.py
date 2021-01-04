@@ -20,21 +20,35 @@ Goede code comments
 from array import *
 import random
 
-namePlayArr = [[],[]]
+# 2d array [[playernaam, playernaam, playernaam],[punten p1, punten p2, punten p3]]
+namePlayArr = [["a", "b", "c"],[0, 0, 0]]
 
 # een welkom menu met opties zoals 1p, 2p, 3p of stoppen(exit)
 print("Welkom Wat is je naam?")
 name1 = input("mijn naam is: ")
 
-print ("\nwelkom {} bij steen papier schaar! Maak een keuze door middel van een cijfer te antwoorden\n. ".format(name1))
+print ("\nWelkom {} bij steen papier schaar! Maak een keuze door middel van een cijfer te antwoorden.\n ".format(name1))
+namePlayArr[0] = name1 #de naam wordt geplaats in de array
+print("Maak een keuze.\n1. Player vs pc\n2. Player vs player\n3. 3 Player game\n4. Exit")
+keuze = input
 
-def
+# een loop zodat het spel nooit zich zelf afsluit tenzij de gebruiker daar voor kiest
+while True:
+    if keuze == 1:
+        print("1")
+    elif keuze == 2:
+        print("2")
+    elif keuze == 3:
+        print("3")
+    elif keuze == 4:
+        print("tot de volgende keer {}!")
+        break
+    else:
+        print("De door jou genomen keuzen wordt niet herkernt {}. Maak keuze uit 1, 2, 3 of 4".format(name1))
 
 # 1d array [rondex, rondex, rondex, rondex]
-# 2d array [[playernaam, playernaam, playernaam],[punter p1, punten p2, punten p3]]
 # een functie die weegt wie wint. Steen papier of schaar.
 # een functie die random steen, papier of schaar genereerd als de gebruiker tegen de pc speelt
-# een loop zodat het spel nooit zich zelf afsluit tenzij de gebruiker daar voor kiest
 # een loop zodat het spel aanblijft tot iemand heeft gewonnen
 # een loop voor de 1p spel
 # een loop voor de 2p spel

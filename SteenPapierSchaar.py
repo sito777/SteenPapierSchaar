@@ -33,18 +33,18 @@ namePlayArr[0] = name1 #de naam wordt geplaats in de array
 # een loop zodat het spel nooit zich zelf afsluit tenzij de gebruiker daar voor kiest
 keuzeMenu = True
 while keuzeMenu:
-    keuze = int("Maak een keuze {}.\n1. Player vs pc\n2. Player vs player\n3. 3 Player game\n4. Exit\n\n".format(name1))
+    keuze = int(input("\nMaak een keuze {}.\n1. Player vs pc\n2. Player vs player\n3. 3 Player game\n4. Exit\n\r".format(name1)))
     if keuze == 1:
         print("a")
+
     if keuze == 2:
         print("2")
     if keuze == 3:
         print("3")
     if keuze == 4:
-        print("tot de volgende keer {}!")
+        print("\ntot de volgende keer {}!".format(name1))
         keuzeMenu = False
-    else:
-        print("\nDe door jou genomen keuzen wordt niet herkernt {}. Maak keuze uit 1, 2, 3 of 4\n".format(name1))
+
 
 # 1d array [rondex, rondex, rondex, rondex]
 # een functie die weegt wie wint. Steen papier of schaar.

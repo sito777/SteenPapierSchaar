@@ -23,11 +23,12 @@ import random
 namePlayArr = [[],[]]
 
 # een welkom menu met opties zoals 1p, 2p, 3p of stoppen(exit)
-print("Welkom bij steen papier schaar! Wat is je naam?/n")
+print("Welkom Wat is je naam?")
 name1 = input("mijn naam is: ")
-namePlayArr.append([0],[])
 
-print (namePlayArr)
+print ("\nwelkom {} bij steen papier schaar! Maak een keuze door middel van een cijfer te antwoorden\n. ".format(name1))
+
+def
 
 # 1d array [rondex, rondex, rondex, rondex]
 # 2d array [[playernaam, playernaam, playernaam],[punter p1, punten p2, punten p3]]

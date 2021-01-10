@@ -6,13 +6,11 @@ from array import *
 import random
 import os
 
-# 1d array [rondex, rondex, rondex, rondex]
-ronde = [0]
-
-# 2d array [[playernaam, playernaam, playernaam],[punten p1, punten p2, punten p3]]
-namePlayArr = [[],[]]
+# 2d array [[playernaam, playernaam, playernaam],[punten p1, punten p2, punten pc]]
+namePlayArr = [[],[0, 0, 0]]
 
 # de waarde vaan sps
+sps = ["steen", "papier", "schaar"]
 steen = 1
 papier = 2
 schaar = 3
@@ -33,6 +31,20 @@ schaar = 3
 def clear(): 
     os.system('clear')
 
+def punten():
+    if namePlayArr[1][0] == 2:
+        global eenPlayerGame
+        eenPlayerGame = False
+        global tweePlayerGame
+        tweePlayerGame = False 
+        print(namePlayArr) #tekst verzinnen voor de winnaar & de game false maken voor de andere spelers
+    elif namePlayArr[1][1] == 2:
+        eenPlayerGame = False
+        tweePlayerGame = False
+    elif namePlayArr[1][2] == 2:
+        eenPlayerGame = False
+        tweePlayerGame = False
+
 # een functie die weegt wie wint. Steen papier of schaar.
 def weegschaal():
     # gelijkspel
@@ -47,21 +59,27 @@ def weegschaal():
     elif pvc == 1:
         print("Jij kiest steen")
         if pckeuze == 3:
+            namePlayArr[1][0] +=1
             print ("Gefeliciteerd jij wint")
         else:
             print("Helaas, je hebt verloren")
+            namePlayArr[1][1] +=1
     elif pvc == 2:
         print("Jij kiest papier")
         if pckeuze == 1:
+            namePlayArr[1][0] +=1
             print("Gefeliciteerd jij wint")
         else:
             print("Helaas, je hebt verloren")
+            namePlayArr[1][1] +=1
     elif pvc == 3:
         print("Jij kiest schaar")
         if pckeuze == 2:
+            namePlayArr[1][0] +=1
             print("Gefeliciteerd jij wint")
         else:
             print("Helaas, je hebt verloren")
+            namePlayArr[1][1] +=1
     else:
         print("De door jou genomen keuzen wordt niet herkend ")
 
@@ -121,6 +139,7 @@ while keuzeMenu:
             if pckeuze == 3:
                 print("De pc kiest schaar")
             weegschaal()
+            punten()
     elif keuze == 2:
         # een loop voor de 2p spel
         print("Welkom player 2 Wat is je naam?")
@@ -134,6 +153,7 @@ while keuzeMenu:
             pvp = int(input("\n{} maak een keuze\n1. steen\n2. papier\n3. schaar\n\n".format(name2)))
             clear()
             weegschaal2P()
+            punten()
     elif keuze == 3:
         # een loop voor de 3p spel
         driePlayerGame = True

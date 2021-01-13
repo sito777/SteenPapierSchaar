@@ -1,7 +1,3 @@
-""" Eisen V:
-De applicatie blijft aanstaan tot er iemand heeft gewonnen met 2 punten
-De applicatie is werkend en het spel kan gespeeld worden
-"""
 from array import *
 import random
 import os
@@ -33,17 +29,18 @@ def clear():
 
 def punten():
     if namePlayArr[1][0] == 2:
-        global eenPlayerGame
+        print("Jij hebt gewonnen {} met".format(name1), namePlayArr[1][0], "punten")
         eenPlayerGame = False
-        global tweePlayerGame
-        tweePlayerGame = False 
-        print(namePlayArr) #tekst verzinnen voor de winnaar & de game false maken voor de andere spelers
+        tweePlayerGame = False
+        return False
     elif namePlayArr[1][1] == 2:
-        eenPlayerGame = False
+        print("Jij hebt gewonnen {} met".format(name2), namePlayArr[1][1], "punten")
         tweePlayerGame = False
+        return False
     elif namePlayArr[1][2] == 2:
+        print("De computer heeft gewonnen met", namePlayArr[1][2], "punten")
         eenPlayerGame = False
-        tweePlayerGame = False
+        return False
 
 # een functie die weegt wie wint. Steen papier of schaar.
 def weegschaal():
@@ -63,7 +60,7 @@ def weegschaal():
             print ("Gefeliciteerd jij wint")
         else:
             print("Helaas, je hebt verloren")
-            namePlayArr[1][1] +=1
+            namePlayArr[1][2] +=1
     elif pvc == 2:
         print("Jij kiest papier")
         if pckeuze == 1:
@@ -71,7 +68,7 @@ def weegschaal():
             print("Gefeliciteerd jij wint")
         else:
             print("Helaas, je hebt verloren")
-            namePlayArr[1][1] +=1
+            namePlayArr[1][2] +=1
     elif pvc == 3:
         print("Jij kiest schaar")
         if pckeuze == 2:
@@ -79,7 +76,7 @@ def weegschaal():
             print("Gefeliciteerd jij wint")
         else:
             print("Helaas, je hebt verloren")
-            namePlayArr[1][1] +=1
+            namePlayArr[1][2] +=1
     else:
         print("De door jou genomen keuzen wordt niet herkend ")
 
@@ -98,20 +95,26 @@ def weegschaal2P():
         print("{} kiest steen".format(name1))
         if pvp == 3:
             print ("Gefeliciteerd {} jij wint".format(name1))
+            namePlayArr[1][0] +=1
         else:
             print("Helaas {}, je hebt verloren".format(name1))
+            namePlayArr[1][1] +=1
     elif pvc == 2:
         print("{} kiest papier".format(name1))
         if pvp == 1:
             print ("Gefeliciteerd {} jij wint".format(name1))
+            namePlayArr[1][0] +=1
         else:
             print("Helaas {}, je hebt verloren".format(name1))
+            namePlayArr[1][1] +=1
     elif pvc == 3:
         print("{} kiest schaar".format(name1))
         if pvp == 2:
             print ("Gefeliciteerd {} jij wint".format(name1))
+            namePlayArr[1][0] +=1
         else:
             print("Helaas {}, je hebt verloren".format(name1))
+            namePlayArr[1][1] +=1
     else:
         print("De door jou genomen keuzen wordt niet herkend ")
 
@@ -129,6 +132,8 @@ while keuzeMenu:
     if keuze == 1:   
         # een loop voor de 1p spel
         eenPlayerGame =  True
+        namePlayArr[1][0] = 0 #rest de punten telling naar 0
+        namePlayArr[1][2] = 0
         while eenPlayerGame: # een loop zodat het spel aanblijft tot iemand heeft gewonnen
             pvc = int(input("\n{} maak een keuze\n1. steen\n2. papier\n3. schaar\n\n".format(name1)))
             pckeuze = random.randint(1, 3) 
@@ -139,13 +144,17 @@ while keuzeMenu:
             if pckeuze == 3:
                 print("De pc kiest schaar")
             weegschaal()
-            punten()
+            punt = punten()
+            if punt == False:
+                break
     elif keuze == 2:
         # een loop voor de 2p spel
         print("Welkom player 2 Wat is je naam?")
         name2 = input("mijn naam is: ")
         toevoegen = namePlayArr[0] #de input wordt in de 2d array geplaats
-        toevoegen.append(name2) #de input wordt in de 2d array geplaats       
+        toevoegen.append(name2) #de input wordt in de 2d array geplaats 
+        namePlayArr[1][0] = 0 #rest de punten telling naar 0
+        namePlayArr[1][1] = 0  
         tweePlayerGame =  True
         while tweePlayerGame: # een loop zodat het spel aanblijft tot iemand heeft gewonnen
             pvc = int(input("\n{} maak een keuze\n1. steen\n2. papier\n3. schaar\n\n".format(name1)))
@@ -154,6 +163,9 @@ while keuzeMenu:
             clear()
             weegschaal2P()
             punten()
+            punt = punten()
+            if punt == False:
+                break
     elif keuze == 3:
         # een loop voor de 3p spel
         driePlayerGame = True
